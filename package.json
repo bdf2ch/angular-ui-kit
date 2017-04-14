@@ -1,0 +1,34 @@
+{
+  "name": "@bdf2ch/angular-ui-kit",
+  "version": "1.0.0",
+  "description": "UI components and tools for Angular2+.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "version": "git push github master"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bdf2ch/angular-ui-kit.git"
+  },
+  "keywords": [
+    "angular",
+    "angular2",
+    "ui",
+    "ux"
+  ],
+  "author": "bdf2ch",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bdf2ch/angular-ui-kit/issues"
+  },
+  "homepage": "https://github.com/bdf2ch/angular-ui-kit#readme",
+  "devDependencies": {
+    "typescript": "^2.2.2"
+  },
+  "dependencies": {
+    "@angular/common": "^4.0.2",
+    "@angular/compiler": "^4.0.2",
+    "@angular/core": "^4.0.2"
+  }
+}
