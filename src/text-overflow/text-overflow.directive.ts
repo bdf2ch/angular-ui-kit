@@ -1,10 +1,10 @@
-import { Directive, Input, ElementRef, OnInit } from '@angular/core';
+import { Directive, Input, ElementRef, OnInit, DoCheck } from '@angular/core';
 
 
 @Directive({
     selector: '[text-overflow]'
 })
-export class TextOverflowDirective implements  OnInit {
+export class TextOverflowDirective implements  OnInit, DoCheck {
     @Input('text-overflow') length: number;
 
 
@@ -21,10 +21,17 @@ export class TextOverflowDirective implements  OnInit {
     /**
      * ngOnInit hook
      */
-    ngOnInit(): void {
+    //ngOnInit(): void {
+    //    if (this.length > 0) {
+    //        this.element.nativeElement.textContent = this.element.nativeElement.textContent.substr(0, this.length) + '...';
+    //    }
+    //};
+
+
+    ngDoCheck(): void {
         if (this.length > 0) {
             this.element.nativeElement.textContent = this.element.nativeElement.textContent.substr(0, this.length) + '...';
         }
-    };
+    }
 
 };

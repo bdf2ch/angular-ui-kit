@@ -21,12 +21,16 @@ var TextOverflowDirective = (function () {
     /**
      * ngOnInit hook
      */
-    TextOverflowDirective.prototype.ngOnInit = function () {
+    //ngOnInit(): void {
+    //    if (this.length > 0) {
+    //        this.element.nativeElement.textContent = this.element.nativeElement.textContent.substr(0, this.length) + '...';
+    //    }
+    //};
+    TextOverflowDirective.prototype.ngDoCheck = function () {
         if (this.length > 0) {
             this.element.nativeElement.textContent = this.element.nativeElement.textContent.substr(0, this.length) + '...';
         }
     };
-    ;
     return TextOverflowDirective;
 }());
 __decorate([
