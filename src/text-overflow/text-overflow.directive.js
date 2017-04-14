@@ -11,32 +11,35 @@ var TextOverflowDirective = (function () {
     /**
      * Constructor
      * @param element {ElementRef} - ElementRef injector
+     * @param renderer {Renderer} - Renderer injector
      */
-    function TextOverflowDirective(element) {
+    function TextOverflowDirective(element, renderer) {
         this.element = element;
+        this.renderer = renderer;
         if (this.length === undefined)
             this.length = 0;
     }
     ;
     /**
-     * ngOnInit hook
+     * Listens for element's content cahnges
      */
-    //ngOnInit(): void {
-    //    if (this.length > 0) {
-    //        this.element.nativeElement.textContent = this.element.nativeElement.textContent.substr(0, this.length) + '...';
-    //    }
-    //};
-    TextOverflowDirective.prototype.ngDoCheck = function () {
+    TextOverflowDirective.prototype.onChange = function () {
         var innerTextLength = this.element.nativeElement.innerText.length;
-        if (innerTextLength > 0 && this.length > 0 && innerTextLength > this.length) {
-            this.element.nativeElement.innerText = this.element.nativeElement.innerText.substr(0, this.length) + '...';
+        if (this.length > 0 && innerTextLength > 0 && innerTextLength > this.length) {
+            this.element.nativeElement.innerText = this.element.nativeElement.innerText.substr(0, this.length - 3) + '...';
         }
+        if (this.element.nativeElement.innerText.indexOf('...') === -1)
+            this.renderer.setElementProperty(this.element.nativeElement, 'title', this.element.nativeElement.innerText);
     };
+    ;
     return TextOverflowDirective;
 }());
 __decorate([
     core_1.Input('text-overflow')
 ], TextOverflowDirective.prototype, "length", void 0);
+__decorate([
+    core_1.HostListener('DOMSubtreeModified')
+], TextOverflowDirective.prototype, "onChange", null);
 TextOverflowDirective = __decorate([
     core_1.Directive({
         selector: '[text-overflow]'
