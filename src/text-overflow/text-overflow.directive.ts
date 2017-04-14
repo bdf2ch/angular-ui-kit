@@ -4,7 +4,7 @@ import { Directive, Input, ElementRef, OnInit, DoCheck } from '@angular/core';
 @Directive({
     selector: '[text-overflow]'
 })
-export class TextOverflowDirective implements  OnInit, DoCheck {
+export class TextOverflowDirective implements DoCheck {
     @Input('text-overflow') length: number;
 
 
