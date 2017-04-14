@@ -29,8 +29,9 @@ export class TextOverflowDirective implements DoCheck {
 
 
     ngDoCheck(): void {
-        if (this.length > 0) {
-            this.element.nativeElement.textContent = this.element.nativeElement.textContent.substr(0, this.length) + '...';
+        var innerTextLength = this.element.nativeElement.innerText.length;
+        if (innerTextLength > 0 && this.length > 0 && innerTextLength > this.length) {
+            this.element.nativeElement.innerText = this.element.nativeElement.innerText.substr(0, this.length) + '...';
         }
     }
 
