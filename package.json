@@ -1,6 +1,6 @@
 {
   "name": "@bdf2ch/angular-ui-kit",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "UI components and tools for Angular2+.",
   "main": "index.js",
   "scripts": {
