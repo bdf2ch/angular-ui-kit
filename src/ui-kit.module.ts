@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { TextOverflowDirective } from './text-overflow/text-overflow.directive';
 import { TreeComponent } from "./tree/tree.component";
 import { TreeItemComponent } from "./tree/tree-item.component";
@@ -7,7 +8,9 @@ import { ModalComponent } from './modal/modal.component';
 import { ModalService } from './modal/modal.service';
 
 @NgModule({
-    imports: [],
+    imports: [
+        CommonModule
+    ],
     declarations: [
         TextOverflowDirective,
         TreeComponent,

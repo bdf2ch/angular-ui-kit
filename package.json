@@ -27,9 +27,5 @@
   "devDependencies": {
     "typescript": "^2.2.2"
   },
-  "dependencies": {
-    "@angular/common": "^4.0.2",
-    "@angular/compiler": "^4.0.2",
-    "@angular/core": "^4.0.2"
-  }
+  "dependencies": {}
 }

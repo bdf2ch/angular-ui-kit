@@ -7,7 +7,13 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
+var common_1 = require("@angular/common");
 var text_overflow_directive_1 = require("./text-overflow/text-overflow.directive");
+var tree_component_1 = require("./tree/tree.component");
+var tree_item_component_1 = require("./tree/tree-item.component");
+var tree_service_1 = require("./tree/tree.service");
+var modal_component_1 = require("./modal/modal.component");
+var modal_service_1 = require("./modal/modal.service");
 var UiKitModule = (function () {
     function UiKitModule() {
     }
@@ -15,14 +21,25 @@ var UiKitModule = (function () {
 }());
 UiKitModule = __decorate([
     core_1.NgModule({
-        imports: [],
+        imports: [
+            common_1.CommonModule
+        ],
         declarations: [
-            text_overflow_directive_1.TextOverflowDirective
+            text_overflow_directive_1.TextOverflowDirective,
+            tree_component_1.TreeComponent,
+            tree_item_component_1.TreeItemComponent,
+            modal_component_1.ModalComponent
         ],
         exports: [
-            text_overflow_directive_1.TextOverflowDirective
+            text_overflow_directive_1.TextOverflowDirective,
+            tree_component_1.TreeComponent,
+            tree_item_component_1.TreeItemComponent,
+            modal_component_1.ModalComponent
         ],
-        providers: []
+        providers: [
+            tree_service_1.TreeService,
+            modal_service_1.ModalService
+        ]
     })
 ], UiKitModule);
 exports.UiKitModule = UiKitModule;

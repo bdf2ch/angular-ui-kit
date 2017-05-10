@@ -27,9 +27,10 @@ var TextOverflowDirective = (function () {
         var innerTextLength = this.element.nativeElement.innerText.length;
         if (this.length > 0 && innerTextLength > 0 && innerTextLength > this.length) {
             this.element.nativeElement.innerText = this.element.nativeElement.innerText.substr(0, this.length - 3) + '...';
-        }
-        if (this.element.nativeElement.innerText.indexOf('...') === -1)
             this.renderer.setElementProperty(this.element.nativeElement, 'title', this.element.nativeElement.innerText);
+        }
+        //if (this.element.nativeElement.innerText.indexOf('...') === -1)
+        //    this.renderer.setElementProperty(this.element.nativeElement, 'title', this.element.nativeElement.innerText);
     };
     ;
     return TextOverflowDirective;

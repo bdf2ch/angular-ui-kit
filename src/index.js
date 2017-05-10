@@ -2,5 +2,18 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 var text_overflow_directive_1 = require("./text-overflow/text-overflow.directive");
 exports.TextOverflowDirective = text_overflow_directive_1.TextOverflowDirective;
+var tree_component_1 = require("./tree/tree.component");
+exports.TreeComponent = tree_component_1.TreeComponent;
+var tree_item_component_1 = require("./tree/tree-item.component");
+exports.TreeItemComponent = tree_item_component_1.TreeItemComponent;
+var tree_service_1 = require("./tree/tree.service");
+exports.TreeService = tree_service_1.TreeService;
+var tree_item_1 = require("./tree/tree-item");
+exports.TreeItem = tree_item_1.TreeItem;
+var modal_component_1 = require("./modal/modal.component");
+exports.ModalComponent = modal_component_1.ModalComponent;
+exports.ModalContentComponent = modal_component_1.ModalContentComponent;
+var modal_service_1 = require("./modal/modal.service");
+exports.ModalService = modal_service_1.ModalService;
 var ui_kit_module_1 = require("./ui-kit.module");
 exports.UiKitModule = ui_kit_module_1.UiKitModule;
